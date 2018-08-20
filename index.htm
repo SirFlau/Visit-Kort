@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang=dk>
+<head>
+  <title> Peter Skouboe Rasmussen </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel=stylesheet href=style.css />
+</head>
+
+<body>
+  <Iframe src="Home.htm" class="frame" id="mainFrame"></Iframe>
+
+  <div class="navbar" id="myNavbar">
+    <a href="javascript:void(0);" onclick="toggleNavigation('Home.htm')">Home</a>
+    <a href="javascript:void(0);" onclick="toggleNavigation('om mig.htm')">Om Mig</a>
+    <a href="javascript:void(0);" onclick="toggleNavigation('CV.htm')">CV</a>
+    <a href="javascript:void(0);" onclick="toggleNavigation('Kontakt.htm')">Kontakt</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleNavigation('MenuToggle')"><span title="Navigation">&#9776;</span></a>
+  </div>
+
+  <script>
+    function toggleNavigation(z)
+    {
+      if (z === 'MenuToggle')
+      {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") 
+        {
+          x.className += " responsive";
+        }
+        else 
+        {
+          x.className = "navbar";
+        }
+      }
+     else
+      {
+        document.getElementById("mainFrame").src = z; 
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar responsive")
+        {
+        x.className = "navbar";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
